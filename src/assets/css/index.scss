@@ -1,0 +1,18 @@
+//common
+@import 'normalize';
+@import 'fonts';
+
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+@import 'common';
+@import 'keyframes';
+
+//plugins
+
+//styles
+@import 'style/body';
+
+@import 'style/header';
+@import 'style/main';
+@import 'style/footer';

@@ -1,0 +1,8 @@
+@function pxToVw($screen, $input, $modifier: 1) {
+  $result: ($input / 1px ) / ($screen / 1px / 100) * 1vw;
+  @return calc(#{$result} * #{$modifier} + #{$input} * (1 - #{$modifier}));
+}
+@function pxToVh($screen, $input, $modifier: 1) {
+  $result: ($input / 1px ) / ($screen / 1px / 100) * 1vh;
+  @return calc(#{$result} * #{$modifier} + #{$input} * (1 - #{$modifier}));
+}

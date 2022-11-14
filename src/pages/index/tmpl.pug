@@ -1,0 +1,15 @@
+doctype html
+html
+    include ../../partials/head
+    +head('Главная')
+
+    include ../../partials/body
+        
+        include ../../partials/header
+        +header('body__header')
+
+        main.body__main.main
+            |*main*
+        
+        include ../../partials/footer
+        +footer('body__footer')

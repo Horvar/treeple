@@ -1,0 +1,35 @@
+//colors
+$clrWhite: #fff;
+$clrBlack: #000;
+
+:root {}
+
+//breakpoints
+$resBase: 1920px;
+$resXL: 1200px;
+$resL: 992px;
+$resM: 768px;
+$resS: 540px;
+$resXS: 320px;
+
+//grid
+$wGutterBase: 0px;
+$wGutterL: 0px;
+$wGutterM: 0px;
+$wGutterS: 0px;
+
+$wMarginBase: 0px;
+$wMarginL: 0px;
+$wMarginM: 0px;
+$wMarginS: 0px;
+$wMarginXS: 0px;
+
+$colCountBase: 1;
+$colCountL: 1;
+$colCountM: 1;
+$colCountS: 1;
+
+$wColBase: ($resBase - $wMarginBase * 2 - $wGutterBase * ($colCountBase - 1)) / $colCountBase;
+$wColL: ($resL - $wMarginL * 2 - $wGutterL * ($colCountL - 1)) / $colCountL;
+$wColM: ($resM - $wMarginM * 2 - $wGutterM * ($colCountM - 1)) / $colCountM;
+$wColS: ($resS - $wMarginS * 2 - $wGutterS * ($colCountS - 1)) / $colCountS;
