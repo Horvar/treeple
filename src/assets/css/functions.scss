@@ -1,8 +1,10 @@
+@use "sass:math";
+
 @function pxToVw($screen, $input, $modifier: 1) {
-  $result: ($input / 1px ) / ($screen / 1px / 100) * 1vw;
+  $result: math.div(math.div($input, 1px) , (math.div($screen, 1px) * 0.01)) * 1vw;
   @return calc(#{$result} * #{$modifier} + #{$input} * (1 - #{$modifier}));
 }
 @function pxToVh($screen, $input, $modifier: 1) {
-  $result: ($input / 1px ) / ($screen / 1px / 100) * 1vh;
+  $result: math.div(math.div($input, 1px) , (math.div($screen, 1px) * 0.01)) * 1vh;
   @return calc(#{$result} * #{$modifier} + #{$input} * (1 - #{$modifier}));
 }

@@ -23,9 +23,9 @@
     "html-webpack-plugin": "^5.5.0",
     "http-server": "^14.1.1",
     "mini-css-extract-plugin": "^2.6.1",
-    "node-sass": "^8.0.0",
     "pug": "^3.0.2",
     "pug-loader": "^2.4.0",
+    "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
     "url-loader": "^4.1.1",
@@ -39,7 +39,7 @@
   "dependencies": {
     "@fancyapps/ui": "^4.0.31",
     "gsap": "^3.11.3",
-    "swiper": "^8.4.4",
-    "jquery": "^3.6.1"
+    "jquery": "^3.6.1",
+    "swiper": "^8.4.4"
   }
 }

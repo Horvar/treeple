@@ -4,14 +4,6 @@
   @-moz-document url-prefix() {
     overflow-x: visible;
   }
-
-  * {
-    -webkit-tap-highlight-color: transparent;
-  }
-}
-
-
-.body {
   
   &:not(.is-loaded) {
     * {
@@ -20,5 +12,9 @@
   }
   &.is-loaded {
     animation: bodyShow 1s ease forwards;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
   }
 }
