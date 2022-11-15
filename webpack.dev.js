@@ -20,7 +20,7 @@ module.exports = {
     // Настройка dev server
     devServer: {
         static: ['./src', './dist'],
-        port: 8888,
+        port: 8080,
         hot: true
     },
 

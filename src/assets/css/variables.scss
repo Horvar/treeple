@@ -1,4 +1,6 @@
 //colors
+@use "sass:math";
+
 $clrWhite: #fff;
 $clrBlack: #000;
 
@@ -29,7 +31,7 @@ $colCountL: 1;
 $colCountM: 1;
 $colCountS: 1;
 
-$wColBase: ($resBase - $wMarginBase * 2 - $wGutterBase * ($colCountBase - 1)) / $colCountBase;
-$wColL: ($resL - $wMarginL * 2 - $wGutterL * ($colCountL - 1)) / $colCountL;
-$wColM: ($resM - $wMarginM * 2 - $wGutterM * ($colCountM - 1)) / $colCountM;
-$wColS: ($resS - $wMarginS * 2 - $wGutterS * ($colCountS - 1)) / $colCountS;
+$wColBase: math.div($resBase - $wMarginBase * 2 - $wGutterBase * ($colCountBase - 1), $colCountBase);
+$wColL: math.div($resL - $wMarginL * 2 - $wGutterL * ($colCountL - 1), $colCountL);
+$wColM: math.div($resM - $wMarginM * 2 - $wGutterM * ($colCountM - 1), $colCountM);
+$wColS: math.div($resS - $wMarginS * 2 - $wGutterS * ($colCountS - 1), $colCountS);
