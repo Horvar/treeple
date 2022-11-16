@@ -19,7 +19,6 @@
     "css-loader": "^6.7.2",
     "file-loader": "^6.2.0",
     "html-loader": "^4.2.0",
-    "html-webpack-externals-plugin": "^3.8.0",
     "html-webpack-plugin": "^5.5.0",
     "http-server": "^14.1.1",
     "mini-css-extract-plugin": "^2.6.1",

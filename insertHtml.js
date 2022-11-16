@@ -1,18 +1,18 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const htmlTemplate = (name, mode, preprocessor) => {
-    let inserter = preprocessor ? preprocessor : 'html'
+    let ext = preprocessor ? preprocessor : 'html'
 
     return new HtmlWebpackPlugin({
-        template: `./src/pages/${name}/tmpl.${inserter}`,
+        template: `./src/pages/${name}/tmpl.${ext}`,
         inject: true,
         chunks: [`${name}`],
-        filename: name === 'index' || mode === 'prod' ? `${name}.html` : `${name}`,
+        filename: name === 'index' || mode === 'prod' ? `${name}.html` : `${name}.html`,
         minify: mode !== 'dev'
     })
 }
 
-function inserterHtml(pages = [], mode ='', preprocessor ='') {
+function insertHtml(pages = [], mode ='', preprocessor ='') {
     const res = []
 
     pages.forEach(page => {
@@ -22,4 +22,4 @@ function inserterHtml(pages = [], mode ='', preprocessor ='') {
     return res
 }
 
-module.exports = inserterHtml
+module.exports = insertHtml

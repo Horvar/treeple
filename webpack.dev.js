@@ -3,15 +3,18 @@ const webpack = require('webpack')
 
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
-const inserterHtml = require('./inserterHtml')
+const insertHtml = require('./insertHtml')
 
-const pages = ['index']
+const componentList = ['index']
+
+const entryList = componentList.reduce((entries, componentName) => {
+    entries[componentName] = path.join(__dirname, `./src/pages/${componentName}/index.js`);
+    return entries;
+}, {});
 
 module.exports = {
     // Регистрация entry points
-    entry: {
-        index: path.resolve(__dirname, './src/pages/index/index.js')
-    },
+    entry: entryList,
     
     mode: 'development',
 
@@ -102,7 +105,7 @@ module.exports = {
 
     plugins:
     // Подключение pages
-        inserterHtml(pages, 'dev', 'pug')
+        insertHtml(componentList, 'dev', 'pug')
             .concat(
                 // Копия assets без css папки
                 new CopyWebpackPlugin({
