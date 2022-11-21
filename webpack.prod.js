@@ -50,6 +50,21 @@ module.exports = {
                         }
                     },
                     {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    [
+                                        'autoprefixer',
+                                        {
+                                            // Options
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    },
+                    {
                         loader: 'sass-loader',
                         options: {
                             sourceMap: true

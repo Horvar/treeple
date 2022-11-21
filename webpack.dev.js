@@ -13,22 +13,23 @@ const entryList = componentList.reduce((entries, componentName) => {
 }, {});
 
 module.exports = {
-    // Регистрация entry points
-    entry: entryList,
-    
     mode: 'development',
 
     devtool: 'eval-cheap-module-source-map',
 
     // Настройка dev server
     devServer: {
-        static: ['./src', './dist'],
         port: 8080,
-        hot: true
+        hot: true,
+        static: ['./src', './dist'],
+        compress: true
     },
 
     // HMR без этого не работает (?)
     target: 'web',
+
+    // Регистрация entry points
+    entry: entryList,
 
     // Подгрузка лоадеров (js и scss)
     module: {
@@ -56,6 +57,21 @@ module.exports = {
                         options: {
                             url: false,
                             sourceMap: true
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    [
+                                        'autoprefixer',
+                                        {
+                                            // Options
+                                        }
+                                    ]
+                                ]
+                            }
                         }
                     },
                     {
