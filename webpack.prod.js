@@ -7,12 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const insertHtml = require('./insertHtml')
 
-const componentList = ['index']
-
-const entryList = componentList.reduce((entries, componentName) => {
-    entries[componentName] = path.join(__dirname, `./src/pages/${componentName}/index.js`);
-    return entries;
-}, {});
+const {componentList, entryList} = require('./componentList.js')
 
 module.exports = {
     // Регистрация entry points
