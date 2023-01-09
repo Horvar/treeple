@@ -37,8 +37,10 @@
   ],
   "dependencies": {
     "@fancyapps/ui": "^4.0.31",
+    "autoprefixer": "^10.4.13",
     "gsap": "^3.11.3",
     "jquery": "^3.6.1",
+    "postcss-loader": "^7.0.2",
     "swiper": "^8.4.4"
   }
 }
