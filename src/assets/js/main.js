@@ -1,8 +1,5 @@
 import $ from 'jquery';
 
-global.jQuery = $;
-global.$ = $;
-
 $(document).ready(function () {
   const resB = 1920
   const resXL = 1200
