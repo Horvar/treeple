@@ -1,0 +1,45 @@
+.review-card {
+  display: flex;
+  flex-direction: column;
+  
+  background: $clrSkyblue;
+  border-radius: 16px;
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.review-card__author {
+  color: $clrBlueDark;
+
+  margin-bottom: 60px;
+
+  @media (max-width: $resM) {
+    margin-bottom: 30px;
+  }
+}
+
+.review-card__title {
+  color: $clrBlueDark;
+
+  margin-bottom: 20px;
+
+  @media (max-width: $resM) {
+    margin-bottom: 10px;
+  }
+}
+
+.review-card__text {
+  color: $clrGray;
+
+  margin-bottom: 40px;
+
+  @media (max-width: $resM) {
+    margin-bottom: 20px;
+  }
+}
+
+.review-card__link-button {
+  margin-top: auto;
+  margin-left: auto;
+}

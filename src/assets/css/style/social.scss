@@ -1,0 +1,31 @@
+.social {}
+
+.social__list {
+  display: flex;
+  gap: 30px;
+
+  @media (max-width: $resM) {
+    gap: 0;
+  }
+}
+
+.social__item {}
+
+.social__link-wrapper {
+  display: flex;
+  
+  &:hover {
+    .social__svg-icon {
+      color: $clrPink;
+    }
+  }
+}
+
+.social__svg-icon {
+  display: flex;
+  
+  width: 56px;
+  height: 56px;
+  
+  color: $clrWhite;
+}

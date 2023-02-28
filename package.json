@@ -36,11 +36,16 @@
     "> 1%"
   ],
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
     "@fancyapps/ui": "^4.0.31",
     "autoprefixer": "^10.4.13",
     "gsap": "^3.11.3",
+    "hamburgers": "^1.2.1",
     "jquery": "^3.6.1",
+    "js-datepicker": "^5.18.2",
     "postcss-loader": "^7.0.2",
+    "select2": "^4.1.0-rc.0",
+    "slick-slider": "^1.8.2",
     "swiper": "^8.4.4"
   }
 }

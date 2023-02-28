@@ -1,0 +1,77 @@
+-
+    headerNav = [
+            'Туры',
+            'Регионы',
+            'О нас'
+    ],
+    footerNav = [
+            'Каталог туров',
+            'Путеводитель',
+            'О нас',
+            'Партнерам'
+    ]
+
+mixin header(addClass)
+    header(class=addClass).header
+        .header__container.container
+            button(type='button' data-menu-button aria-label='Меню').header__hamburger.hamburger.hamburger--squeeze.show-M
+                span.hamburger-box
+                    span.hamburger-inner
+            a(href='/' aria-label='treeple.kz').header__logo.logo
+                svg.logo__svg
+                    use(href='assets/svg/sprite.svg#logo')
+            nav.header__nav.header-nav.hide-M
+                ul.header-nav__list
+                    each val in headerNav
+                        li.header-nav__item
+                            a(href='#').header-nav__link-wrapper.text-common=val
+            nav.header__language.language.hide-M
+                ul.language__list
+                    li.language__item
+                        a(href='#').language__link-wrapper.text-small Rus
+                    li.language__item
+                        a(href='#').language__link-wrapper.text-small.is-active Kaz
+            a(href='#').header__link-callback.header__link-callback--1.button-1.text-bold.hide-M Связаться
+            a(href='#' aria-label='Связаться').header__link-callback.header__link-callback--2.show-M
+                svg
+                    use(href='assets/svg/sprite.svg#phone')
+                    
+mixin footer(addClass)
+    footer(class=addClass).footer
+        .footer__container.container
+            .footer__row.footer__row--1
+                nav.footer__nav.footer-nav
+                    ul.footer-nav__list
+                        each val in footerNav
+                            li.footer-nav__item
+                                a(href='#').footer-nav__link-wrapper.text-bold=val
+                        li.footer-nav__item
+                            a(href='#').footer-nav__link-wrapper.text-bold Политика обработки<br> данных
+                .footer__wrapper.footer__wrapper--1
+                    h2.footer__title.title-3 написать SEO текст который поможет в продвижении сайта
+                    .footer__text.text-small Для современного мира реализация намеченных плановых заданий играет важную роль в формировании соответствующих условий активизации. Сложно сказать, почему непосредственные участники технического прогресса, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут призваны к ответу.
+            .footer__row.footer__row--2
+                .footer__wrapper.footer__wrapper--2
+                    a(href='/').footer__logo.logo(aria-label='treeple.kz')
+                        svg.logo__svg
+                            use(href='assets/svg/sprite.svg#logoColored')
+                    .footer__copyrights.text-small.hide-S © 2023 «Treeple.kz» все права защещены
+                .footer__social.social
+                    ul.social__list
+                        li.social__item
+                            a(href='#' aria-label='ВКонтакте').social__link-wrapper
+                                svg.social__svg-icon
+                                    use(href='assets/svg/sprite.svg#socialVk')
+                        li.social__item
+                            a(href='#' aria-label='Tik-Tok').social__link-wrapper
+                                svg.social__svg-icon
+                                    use(href='assets/svg/sprite.svg#socialTt')
+                        li.social__item
+                            a(href='#' aria-label='You Tube').social__link-wrapper
+                                svg.social__svg-icon
+                                    use(href='assets/svg/sprite.svg#socialYt')
+            .footer__copyrights.text-small.show-S © 2023 «Treeple.kz» все права защещены
+                    
+mixin wrappedImage(addClass, src, srcSet, alt)
+    picture(class=addClass)
+        img(src=src srcset=srcSet alt=alt)

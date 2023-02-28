@@ -1,3 +1,138 @@
 .footer {
-  background: orange;
+  background: $clrViolet;
+  color: $clrWhite;
+
+  padding: 120px 0 60px;
+  box-sizing: border-box;
+
+  @media (max-width: $resM) {
+    padding: 60px 0 30px;
+  }
+}
+
+.footer__container {}
+
+.footer__row {
+  display: flex;
+  
+  &--1 {
+    justify-content: space-between;
+
+    padding-bottom: 60px;
+    box-sizing: border-box;
+
+    @media (max-width: $resM) {
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 60px;
+      
+      padding-bottom: 30px;
+    }
+  }
+  &--2 {
+    align-items: center;
+    
+    border-top: 1px solid;
+    
+    padding-top: 25px;
+    box-sizing: border-box;
+
+    @media (max-width: $resM) {
+      padding-top: 8px;
+      align-items: flex-start;
+    }
+  }
+}
+
+.footer__nav {}
+
+.footer-nav__list {
+  columns: 2;
+  column-width: $wColBase * 3 + $wGutterBase * 2;
+  column-gap: $wGutterBase;
+
+  margin-bottom: -16px;
+
+  @media (max-width: $resM) {
+    column-width: $wColM * 2 + $wGutterM * 1;
+    column-gap: $wGutterM;
+    
+    margin-bottom: -8px;
+  }
+  @media (max-width: $resS) {
+    column-width: $wColXS * 2 + $wGutterXS * 1;
+    column-gap: $wGutterXS;
+  }
+}
+
+.footer-nav__item {
+  margin-bottom: 16px;
+
+  @media (max-width: $resM) {
+    margin-bottom: 8px;
+  }
+}
+
+.footer-nav__link-wrapper {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer__wrapper {
+  &--1 {
+    width: $wColBase * 4 + $wGutterBase * 3;
+
+    @media (max-width: $resM) {
+      width: 100%;
+    }
+  }
+  &--2 {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    @media (max-width: $resM) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 35px;
+
+      padding-top: 12px;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.footer__title {
+  margin-bottom: 40px;
+
+  @media (max-width: $resM) {
+    margin-bottom: 20px;
+  }
+}
+
+.footer__text {}
+
+.footer__logo {
+  width: 149px;
+  height: 38px;
+
+  margin-right: 25px;
+
+  @media (max-width: $resM) {
+    width: 113px;
+    height: 29px;
+
+    margin-right: 0;
+  }
+}
+
+.footer__copyrights {
+  @media (max-width: $resS) {
+    margin-top: 20px;
+  }
+}
+
+.footer__social {
+  margin-left: auto;
 }

@@ -1,0 +1,43 @@
+.tours-short {}
+
+.tours-short__container {}
+
+.tours-short__heading {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 60px;
+
+  @media (max-width: $resM) {
+    flex-direction: column;
+    gap: 20px;
+    
+    margin-bottom: 30px;
+  }
+}
+
+.tours-short__title {}
+
+.tours-short__text {
+  width: $wColBase * 6 + $wGutterBase * 5;
+
+  @media (max-width: $resM) {
+    width: auto;
+  }
+}
+
+.tours-short__list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-row-gap: 20px;
+  grid-column-gap: 10px;
+
+  @media (max-width: $resM) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: $resS) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.tours-short__item {}

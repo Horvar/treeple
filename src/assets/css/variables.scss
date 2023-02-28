@@ -4,34 +4,61 @@
 $clrWhite: #fff;
 $clrBlack: #000;
 
+$clrBlueDark: #051851;
+$clrSkyblue: #EAEEFC;
+$clrCyan: #89D2DC;
+
+$clrViolet: #7A55B6;
+$clrMagenta: #B47DD7;
+$clrPink: #FFBDC2;
+$clrPinkLight: #FFEDEF;
+$clrInactive: #E0D6E7;
+
+$clrGray: #3C4659;
+$clrGrayLight: #ECECEC;
+
 :root {}
 
 //breakpoints
 $resBase: 1920px;
-$resXL: 1200px;
+$resXL: 1440px;
 $resL: 992px;
 $resM: 768px;
 $resS: 540px;
 $resXS: 320px;
 
 //grid
-$wGutterBase: 0px;
-$wGutterL: 0px;
-$wGutterM: 0px;
-$wGutterS: 0px;
+$wGutterBase: 20px;
+$wGutterL: 20px;
+$wGutterM: 10px;
+$wGutterS: 10px;
+$wGutterXS: 10px;
 
-$wMarginBase: 0px;
-$wMarginL: 0px;
-$wMarginM: 0px;
-$wMarginS: 0px;
-$wMarginXS: 0px;
+$wMarginBase: 140px;
+$wMarginL: 140px;
+$wMarginM: 10px;
+$wMarginS: 10px;
+$wMarginXS: 10px;
 
-$colCountBase: 1;
-$colCountL: 1;
-$colCountM: 1;
-$colCountS: 1;
+$colCountBase: 12;
+$colCountL: 12;
+$colCountM: 4;
+$colCountS: 4;
+$colCountXS: 4;
 
 $wColBase: math.div($resBase - $wMarginBase * 2 - $wGutterBase * ($colCountBase - 1), $colCountBase);
 $wColL: math.div($resL - $wMarginL * 2 - $wGutterL * ($colCountL - 1), $colCountL);
 $wColM: math.div($resM - $wMarginM * 2 - $wGutterM * ($colCountM - 1), $colCountM);
 $wColS: math.div($resS - $wMarginS * 2 - $wGutterS * ($colCountS - 1), $colCountS);
+$wColXS: math.div($resXS - $wMarginXS * 2 - $wGutterXS * ($colCountXS - 1), $colCountXS);
+
+//hamburgers
+$hamburger-padding-x           : 0;
+$hamburger-padding-y           : 0;
+$hamburger-layer-width         : 16px;
+$hamburger-layer-height        : 2.77px;
+$hamburger-layer-spacing       : 2px;
+$hamburger-layer-color         : $clrPink;
+$hamburger-layer-border-radius : 2px;
+$hamburger-hover-opacity       : 1;
+$hamburger-active-layer-color  : $clrPink;

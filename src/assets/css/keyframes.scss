@@ -5,3 +5,9 @@
     transition: none;
   }
 }
+
+@keyframes animTickerLeft {
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}

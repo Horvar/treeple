@@ -1,15 +1,259 @@
+include ../../partials/mixins
+    
+-
+    galleryPhotos = [
+        {
+            src: 'assets/img/gallery/photo-1.jpg',
+            srcset: 'assets/img/gallery/photo-1@2x.jpg 2x'
+        },
+        {
+            src: 'assets/img/gallery/photo-2.jpg',
+            srcset: 'assets/img/gallery/photo-2@2x.jpg 2x'
+        },
+        {
+            src: 'assets/img/gallery/photo-3.jpg',
+            srcset: 'assets/img/gallery/photo-3@2x.jpg 2x'
+        },
+        {
+            src: 'assets/img/gallery/photo-4.jpg',
+            srcset: 'assets/img/gallery/photo-4@2x.jpg 2x'
+        },
+        {
+            src: 'assets/img/gallery/photo-5.jpg',
+            srcset: 'assets/img/gallery/photo-5@2x.jpg 2x'
+        },
+        {
+            src: 'assets/img/gallery/photo-6.jpg',
+            srcset: 'assets/img/gallery/photo-6@2x.jpg 2x'
+        },
+        {
+            src: 'assets/img/gallery/photo-7.jpg',
+            srcset: 'assets/img/gallery/photo-7@2x.jpg 2x'
+        },
+        {
+            src: 'assets/img/gallery/photo-8.jpg',
+            srcset: 'assets/img/gallery/photo-8@2x.jpg 2x'
+        },
+        {
+            src: 'assets/img/gallery/photo-9.jpg',
+            srcset: 'assets/img/gallery/photo-9@2x.jpg 2x'
+        },
+        {
+            src: 'assets/img/gallery/photo-10.jpg',
+            srcset: 'assets/img/gallery/photo-10@2x.jpg 2x'
+        }
+    ]
+
 doctype html
-html
+html(lang='RU')
     include ../../partials/head
     +head('Главная')
-
-    include ../../partials/body
-        
-        include ../../partials/header
-        +header('body__header')
-
-        main.body__main.main
-            |*main*
-        
-        include ../../partials/footer
-        +footer('body__footer')
+    body.body
+        .body__wrapper(style='opacity:0; overflow:hidden')
+    
+            +header('body__header')
+    
+            main.body__main.main
+                section.main__intro.intro.m-120-60
+                    .intro__container.container(data-screen-height='540')
+                        .intro__search.intro-search
+                            .intro-search__select.intro-search-select
+                                svg.intro-search-select__svg-icon
+                                    use(href='assets/svg/sprite.svg#flag')
+                                select(name='place' data-placeholder='Куда вы хотите?' data-select-main)
+                                    option
+                                    option(value="1") Абай
+                                    option(value="2") Акколь
+                                    option(value="3") Аксай
+                                    option(value="4") Аксу
+                                    option(value="5") Актау
+                                    option(value="6") Актобе
+                                    option(value="7") Алга
+                                    option(value="8") Алматы
+                                .intro-search-select__dropdown
+                                    
+                            .intro-search__datepicker.intro-search-datepicker.text-lead(id='datepickerMain')
+                                output Даты
+                                svg.intro-search-select__svg-icon
+                                    use(href='assets/svg/sprite.svg#calendar')
+                                
+                        
+                        
+                            button(type='button').intro-search__button.text-bold
+                                svg
+                                    use(href='assets/svg/sprite.svg#search')
+                                span Найти туры
+                        
+                        .intro__text.title-special У нас лучшие предложения по внутреннему туризму. Настоящие эмоции в каждом туре.
+            
+                section.main__benefits.benefits.m-120-60
+                    .benefits__container.container
+                        ul.benefits__list
+                            li.benefits__item
+                                svg.benefits__svg-icon
+                                    use(href='assets/svg/sprite.svg#benefits1')
+                                .benefits__wrapper
+                                    h3.benefits__title.text-bold Уникальные авторские туры
+                                    .benefits__text.text-small Нестандартные маршруты и новые, запоминающиеся места подарят море впечатлений  
+                            li.benefits__item
+                                svg.benefits__svg-icon
+                                    use(href='assets/svg/sprite.svg#benefits2')
+                                .benefits__wrapper
+                                    h3.benefits__title.text-bold Без наценок и агентств
+                                    .benefits__text.text-small Нестандартные маршруты и новые, запоминающиеся места подарят море впечатлений  
+                            li.benefits__item
+                                svg.benefits__svg-icon
+                                    use(href='assets/svg/sprite.svg#benefits3')
+                                .benefits__wrapper
+                                    h3.benefits__title.text-bold Короткие туры от 1 дня 
+                                    .benefits__text.text-small Нестандартные маршруты и новые, запоминающиеся места подарят море впечатлений
+                                        
+                section.main__tours-short.tours-short.m-120-60
+                    .tours-short__container.container
+                        .tours-short__heading
+                            h2.tours-short__title.title-2 Ближайшие туры
+                            .tours-short__text.text-lead Чтобы принять участие перейдите на страницу тура и нажмите на кнопку «Записаться»
+                        ul.tours-short__list
+                            - var i = 0
+                            while i < 4
+                                - i++
+                                li.tours-short__item.tour-card
+                                    .tour-card__row
+                                        .tour-card__col.tour-card__col--1
+                                            .tour-card__dates.tour-card-dates
+                                                h4.tour-card-dates__title.text-small Даты набора групп
+                                                .tour-card-dates__text.text-common 20—31 марта 2023 г.
+                                                button(type='button').tour-card-dates__button.text-small + 3 варианта
+                                        .tour-card__col.tour-card__col--2
+                                            +wrappedImage('tour-card__image-photo', 'assets/img/tours/photo-1.jpg', 'assets/img/tours/photo-1@2x.jpg 2x', 'Фото тура')
+                                        .tour-card__col.tour-card__col--3
+                                            h3.tour-card__title.title-special Знакомство с Алтаем. Вдоль Чуйского тракта и Марсианские горы. Зимний отдых
+                                            ul.tour-card__tag-cloud.tour-card-tag-cloud.hide-M
+                                                li.tour-card-tag-cloud__item.text-small Туры выходного дня
+                                                li.tour-card-tag-cloud__item.text-small Пешие туры
+                                            .tour-card__wrapper
+                                                .tour-card__difficulty.tour-card-difficulty.hide-M
+                                                    .tour-card-difficulty__text.text-small Сложность
+                                                    ul.tour-card-difficulty__rating
+                                                        li 1
+                                                        li.is-current 2
+                                                        li 3
+                                                        li 4
+                                                .tour-card__comfort.tour-card-comfort.hide-M
+                                                    .tour-card-comfort__text.text-small Комфорт
+                                                    .tour-card-comfort__level.text-small Базовый
+                                        .tour-card__col.tour-card__col--4
+                                            .tour-card__price.title-price 324 600 ₸
+                                            .tour-card__duration.tour-card-duration
+                                                .tour-card-duration__wrapper
+                                                    svg.tour-card-duration__svg-icon
+                                                        use(href='assets/svg/sprite.svg#day')
+                                                    .tour-card-duration__text.text-small 7 дней
+                                                .tour-card-duration__wrapper
+                                                    svg.tour-card-duration__svg-icon
+                                                        use(href='assets/svg/sprite.svg#night')
+                                                    .tour-card-duration__text.text-small 6 ночей
+                                            a(href='#').tour-card__link-button.button-2.text-bold.hide-M Смотреть тур
+                                    
+                section.main__about-short.about-short.m-120-60
+                    .about-short__container.container
+                        .about-short__row(data-sticky-wrapper)
+                            .about-short__col.about-short__col--1(data-sticky-content)
+                                h2.about-short__title.title-1 Treeple.kz — авторские туры по Казахстану и ваши самые яркие воспоминания
+                                article.about-short__text.text-common Приятно, граждане, наблюдать, как предприниматели в сети интернет являются только методом политического участия и своевременно верифицированы. Таким образом, сложившаяся структура организации влечет за собой процесс внедрения и модернизации своевременного выполнения сверхзадачи.
+                                a(href='#').about-short__link-button.button-1.text-bold Каталог туров
+                            .about-short__col.about-short__col--2
+                                +wrappedImage('about-short__image-photo', 'assets/img/generic/photo-1.jpg', 'assets/img/generic/photo-1@2x.jpg 2x', 'Фото тура')
+                                
+                section.main__reviews.reviews.m-120-60
+                    .reviews__container.container
+                        .reviews__heading
+                            h2.reviews__title.title-2 Отзывы
+                            .reviews__text.text-lead Наши клиенты рады рассказать о своих путешествиях! Читайте больше отзывов в нашем <a href='#' target='_blank'>Instagram</a>
+                        ul.reviews__list
+                            li.reviews__item.review-card
+                                .review-card__author.text-desc Арктемьев Даниил
+                                h3.review-card__title.title-special Яркие выходные!
+                                .review-card__text.text-small Тут пока нет текста так как нет отзывов, со совсем скоро они появятся. Тут пока нет текста так как нет отзывов, со совсем скоро они появятся.Тут пока нет текста так как нет отзывов, со совсем скоро они появятся.Тут пока нет текста так как ...
+                                a(href='#' target='_blank').review-card__link-button.button-colored.text-desc Смотреть отзыв
+                            li.reviews__item.review-card
+                                .review-card__author.text-desc Арктемьев Даниил
+                                h3.review-card__title.title-special Яркие выходные!
+                                .review-card__text.text-small Тут пока нет текста так как нет отзывов, со совсем скоро они появятся. Тут пока нет текста так как нет отзывов, со совсем скоро они появятся.Тут пока нет текста так как нет отзывов, со совсем скоро они появятся.Тут пока нет текста так как ...
+                                a(href='#' target='_blank').review-card__link-button.button-colored.text-desc Смотреть отзыв
+                            li.reviews__item.review-card
+                                .review-card__author.text-desc Арктемьев Даниил
+                                h3.review-card__title.title-special Яркие выходные!
+                                .review-card__text.text-small Тут пока нет текста так как нет отзывов, со совсем скоро они появятся. Тут пока нет текста так как нет отзывов, со совсем скоро они появятся.Тут пока нет текста так как нет отзывов, со совсем скоро они появятся.Тут пока нет текста так как ...
+                                a(href='#' target='_blank').review-card__link-button.button-colored.text-desc Смотреть отзыв
+                
+                section.main__guide.guide.m-120-60
+                    .guide__container.container
+                        .guide__heading
+                            h2.guide__title.title-2 Путеводитель
+                            a(href='#').guide__link-button.button-white.text-desc.hide-M Смотреть все регионы
+                        .guide__row
+                            .guide__col.guide__col--1
+                                .guide__pinned.guide-pinned
+                                    +wrappedImage('guide-pinned__image-photo', 'assets/img/guide/photo-1.jpg', 'assets/img/guide/photo-1@2x.jpg 2x', 'Фото тура')
+                                    .guide-pinned__text.guide-pinned__text--1.text-desc Комплекс озер
+                                    h3.guide-pinned__title.title-3 Кульсайские озера,  озеро Кайнды – мир чистой нетронутой природы
+                                    .guide-pinned__text.guide-pinned__text--1.text-desc Алматы
+                                    .guide-pinned__text.guide-pinned__text--2.text-small Это уникальное место Казахстана обычно посещают в комплексе с красивейшими Кульсайскими озёрами, расположенными в этом же регионе (до первого Кольсайского озера всего 12 км).
+                            .guide__col.guide__col--2
+                                .guide__slider.guide-slider
+                                    nav.guide-slider__nav.guide-slider-nav.hide-M
+                                        button(type='button' data-slider-guide-nav='prev' aria-label='Назад').guide-slider-nav__button.guide-slider-nav__button--prev
+                                            svg.guide-slider-nav__svg-arrow
+                                                use(href='assets/svg/sprite.svg#angle1')
+                                        button(type='button' data-slider-guide-nav='next' aria-label='Вперед').guide-slider-nav__button.guide-slider-nav__button--next
+                                            svg.guide-slider-nav__svg-arrow
+                                                use(href='assets/svg/sprite.svg#angle1')
+                                    .guide-slider__list(data-slider-guide)
+                                        .guide-slider__item
+                                            .guide-slider__wrapper
+                                                +wrappedImage('guide-slider__image-photo', 'assets/img/guide/photo-2.jpg', 'assets/img/guide/photo-2@2x.jpg 2x', 'Фото тура')
+                                                .guide-slider__text.guide-slider__text--1.text-desc Настоящий оазис
+                                                h3.guide-slider__title.title-special Курорт Боровое
+                                                .guide-slider__text.guide-slider__text--1.text-desc Кокшетау
+                                                .guide-slider__text.guide-slider__text--2.text-small Курортная зона Боровое  – самый настоящий оазис среди казахских степей – целая сеть красивейших озер в окружении сосновых боров, причудливых гор и с живописными пейзажами.
+                                        .guide-slider__item
+                                            .guide-slider__wrapper
+                                                +wrappedImage('guide-slider__image-photo', 'assets/img/guide/photo-3.jpg', 'assets/img/guide/photo-3@2x.jpg 2x', 'Фото тура')
+                                                .guide-slider__text.guide-slider__text--1.text-desc Национальный парк
+                                                h3.guide-slider__title.title-special Поющий Бархан в Национальном парке «Алтын Эмель»
+                                                .guide-slider__text.guide-slider__text--1.text-desc Алматы
+                                                .guide-slider__text.guide-slider__text--2.text-small Одно из наиболее мистических мест в Казахстане. Этот огромный песчаный холм более 3 км в выс...
+                                        .guide-slider__item
+                                            .guide-slider__wrapper
+                                                +wrappedImage('guide-slider__image-photo', 'assets/img/guide/photo-2.jpg', 'assets/img/guide/photo-2@2x.jpg 2x', 'Фото тура')
+                                                .guide-slider__text.guide-slider__text--1.text-desc Настоящий оазис
+                                                h3.guide-slider__title.title-special Курорт Боровое
+                                                .guide-slider__text.guide-slider__text--1.text-desc Кокшетау
+                                                .guide-slider__text.guide-slider__text--2.text-small Курортная зона Боровое  – самый настоящий оазис среди казахских степей – целая сеть красивейших озер в окружении сосновых боров, причудливых гор и с живописными пейзажами.
+                                        .guide-slider__item
+                                            .guide-slider__wrapper
+                                                +wrappedImage('guide-slider__image-photo', 'assets/img/guide/photo-3.jpg', 'assets/img/guide/photo-3@2x.jpg 2x', 'Фото тура')
+                                                .guide-slider__text.guide-slider__text--1.text-desc Национальный парк
+                                                h3.guide-slider__title.title-special Поющий Бархан в Национальном парке «Алтын Эмель»
+                                                .guide-slider__text.guide-slider__text--1.text-desc Алматы
+                                                .guide-slider__text.guide-slider__text--2.text-small Одно из наиболее мистических мест в Казахстане. Этот огромный песчаный холм более 3 км в выс...
+                
+                                a(href='#').guide__link-button.button-white.text-desc.show-M Смотреть все регионы
+                
+                section.main__gallery.gallery.m-120-60
+                    .gallery__container.container
+                        h2.gallery__title.title-2 Вдохновляем на путешествия!
+                    .gallery__ticker.gallery-ticker
+                        ul.gallery-ticker__list.gallery-ticker__list--1
+                            each val in galleryPhotos
+                                li.gallery-ticker__item
+                                    a(href=val.src data-fancybox='gallery').gallery-ticker__link-wrapper
+                                        +wrappedImage('gallery-ticker__image-photo', val.src, val.srcset, 'Фото путешествия')
+                        ul.gallery-ticker__list.gallery-ticker__list--2
+                            each val in galleryPhotos
+                                li.gallery-ticker__item
+                                    a(href=val.src data-fancybox='gallery').gallery-ticker__link-wrapper
+                                        +wrappedImage('gallery-ticker__image-photo', val.src, val.srcset, 'Фото путешествия')
+                                
+            +footer('body__footer')

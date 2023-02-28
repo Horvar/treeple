@@ -4,17 +4,36 @@
   @-moz-document url-prefix() {
     overflow-x: visible;
   }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.body__wrapper {
+  width: $resBase;
+
+  @media (max-width: $resM) {
+    width: $resM;
+  }
+  @media (max-width: $resS) {
+    width: $resXS;
+  }
   
   &:not(.is-loaded) {
     * {
       transition: 0s !important;
     }
+    
+    .header {
+      transform: translate3d(0, -50%, 0);
+    }
   }
   &.is-loaded {
     animation: bodyShow 1s ease forwards;
-  }
-
-  * {
-    -webkit-tap-highlight-color: transparent;
+    
+    .header {
+      transition: .75s ease;
+    }
   }
 }

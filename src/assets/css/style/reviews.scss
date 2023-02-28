@@ -1,0 +1,60 @@
+.reviews {}
+
+.reviews__container {}
+
+.reviews__heading {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 60px;
+
+  @media (max-width: $resM) {
+    flex-direction: column;
+    gap: 20px;
+
+    margin-bottom: 30px;
+  }
+}
+
+.reviews__title {}
+
+.reviews__text {
+  width: $wColBase * 6 + $wGutterBase * 5;
+
+  @media (max-width: $resM) {
+    width: $wColM * 2 + $wGutterM;
+  }
+  @media (max-width: $resS) {
+    width: $wColS * 2 + $wGutterS;
+  }
+  
+  a {
+    color: $clrViolet;
+  }
+}
+
+.reviews__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: $wGutterBase;
+
+  @media (max-width: $resM) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $wGutterM;
+  }
+  @media (max-width: $resS) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+.reviews__item {
+  &:last-child {
+    @media (max-width: $resM) {
+      grid-column: span 2;
+    }
+    @media (max-width: $resS) {
+      grid-column: span 1;
+    }
+  }
+}
