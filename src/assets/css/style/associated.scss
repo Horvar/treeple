@@ -1,0 +1,95 @@
+.associated-tours {}
+
+.associated-tours__title {}
+
+.associated-tours__wrapper-overflow {
+  
+}
+
+.associated-tours__list {
+  display: flex;
+  gap: 20px;
+  
+  @media (max-width: $resM) {
+    width: calc(100% + #{$wMarginM});
+    margin-right: -$wMarginM;
+    
+    overflow-x: scroll;
+    gap: 10px;
+
+    scrollbar-width: none;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  @media (max-width: $resS) {
+    width: calc(100% + #{$wMarginS});
+    margin-right: -$wMarginM;
+  }
+}
+
+.associated-tours__item {
+  @media (max-width: $resM) {
+    min-width: 223px;
+    width: 223px;
+  }
+}
+
+//card
+
+.associated-card {
+  border: 1px solid $clrGrayLight;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.associated-card__link-wrapper {}
+
+.associated-card__image-photo {
+  border-radius: 8px;
+  overflow: hidden;
+  
+  margin: -1px -1px 0 -1px;
+  
+  img {
+    object-fit: cover;
+  }
+}
+
+.associated-card__description {
+  padding: 8px 8px 16px;
+  box-sizing: border-box;
+}
+
+.associated-card__about {
+  margin-bottom: 8px;
+}
+
+.associated-card__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  
+  margin-bottom: 16px;
+
+  @media (max-width: $resM) {
+    gap: 8px;
+  }
+}
+
+.associated-card__price {}
+
+.associated-card__duration {
+  color: $clrViolet;
+}
+
+.associated-card__subtitle {
+  color: $clrGray;
+  
+  margin-bottom: 8px;
+}
+
+.associated-card__date {
+  color: $clrGray;
+}

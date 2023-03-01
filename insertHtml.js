@@ -8,7 +8,7 @@ const htmlTemplate = (name, mode, preprocessor) => {
         inject: true,
         chunks: [`${name}`],
         filename: name === 'index' || mode === 'prod' ? `${name}.html` : `${name}.html`,
-        minify: mode !== 'dev'
+        minify: false
     })
 }
 

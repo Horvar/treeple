@@ -65,42 +65,53 @@ $(document).ready(function () {
     })
     
     // datepicker
-    const datepickerMain = '#datepickerMain'
-    let datepickerMainY,
-        datepickerMainM,
-        datepickerMainD
-    const pickerMain = datepicker(datepickerMain, {
-        onSelect: (instance, date) => {
-            datepickerMainY = instance.currentYear
-            datepickerMainM = instance.currentMonth + 1
-            datepickerMainD = $(this).find('.qs-active').text()
-            
-            $(this).find('output').text(`${datepickerMainD}.${datepickerMainM}.${datepickerMainY}`).addClass('is-selected')
-        },
-        onShow: instance => {
-            $(datepickerMain).addClass('is-active')
-        },
-        onHide: instance => {
-            $(datepickerMain).removeClass('is-active')
-        },
-        customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-        customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
-    })
-    $(datepickerMain).click(function (e) {
-        let that = $(this)
-        if (that.hasClass('is-active')) {
-            that.removeClass('is-active')}
+    if ($('#datepickerMain').length) {
+        const datepickerMain = '#datepickerMain'
+        let datepickerMainY,
+            datepickerMainM,
+            datepickerMainD
+        const pickerMain = datepicker(datepickerMain, {
+            onSelect: (instance, date) => {
+                datepickerMainY = instance.currentYear
+                datepickerMainM = instance.currentMonth + 1
+                datepickerMainD = $(this).find('.qs-active').text()
 
-        e.stopPropagation()
+                $(this).find('output').text(`${datepickerMainD}.${datepickerMainM}.${datepickerMainY}`).addClass('is-selected')
+            },
+            onShow: instance => {
+                $(datepickerMain).addClass('is-active')
+            },
+            onHide: instance => {
+                $(datepickerMain).removeClass('is-active')
+            },
+            customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+            customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
+        })
+        $(datepickerMain).click(function (e) {
+            let that = $(this)
+            if (that.hasClass('is-active')) {
+                that.removeClass('is-active')}
 
-        const isHidden = pickerMain.calendarContainer.classList.contains('qs-hidden')
-        pickerMain[isHidden ? 'show' : 'hide']()
-    })
+            e.stopPropagation()
+
+            const isHidden = pickerMain.calendarContainer.classList.contains('qs-hidden')
+            pickerMain[isHidden ? 'show' : 'hide']()
+        })
+    }
     
     // fancybox
     $('[data-fancybox]').fancybox({
         animationDuration: 500,
         animationEffect: 'fade'
+    })
+    $('[data-fancy-trigger]').click(function () {
+        $.fancybox.open( $('[data-fancybox=galleryTour]'), {
+            animationDuration: 500,
+            animationEffect: 'fade',
+            thumbs : {
+                autoStart: true
+            }
+        }, 0 )
     })
     
     // slick
@@ -112,6 +123,23 @@ $(document).ready(function () {
         prevArrow: $(this).find('[data-slider-guide-nav=prev]'),
         nextArrow: $(this).find('[data-slider-guide-nav=next]')
     })
+
+    // folders
+    const
+        folderTrigger = $('[data-folder-trigger]'),
+        folderContent = $('[data-folder-content]')
+    
+    if (folderTrigger.length) {
+        folderContent.slideUp(0)
+        
+        folderTrigger.each(function () {
+            let that = $(this)
+            that.click(function () {
+                that.toggleClass('is-unfolded')
+                that.next(folderContent).slideToggle(500)
+            })
+        })
+    }
 
     // sticky fixed
     mozStickyScaleFix()

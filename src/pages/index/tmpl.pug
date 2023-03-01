@@ -54,8 +54,8 @@ html(lang='RU')
             +header('body__header')
     
             main.body__main.main
-                section.main__intro.intro.m-120-60
-                    .intro__container.container(data-screen-height='540')
+                section.main__intro.intro--bg-1.intro.m-120-60
+                    .intro__container.container-1
                         .intro__search.intro-search
                             .intro-search__select.intro-search-select
                                 svg.intro-search-select__svg-icon
@@ -83,11 +83,12 @@ html(lang='RU')
                                 svg
                                     use(href='assets/svg/sprite.svg#search')
                                 span Найти туры
-                        
-                        .intro__text.title-special У нас лучшие предложения по внутреннему туризму. Настоящие эмоции в каждом туре.
+                                
+                        .intro__wrapper.intro__wrapper--1
+                            .intro__text.intro__text--1.title-special У нас лучшие предложения по внутреннему туризму. Настоящие эмоции в каждом туре.
             
                 section.main__benefits.benefits.m-120-60
-                    .benefits__container.container
+                    .benefits__container.container-1
                         ul.benefits__list
                             li.benefits__item
                                 svg.benefits__svg-icon
@@ -109,7 +110,7 @@ html(lang='RU')
                                     .benefits__text.text-small Нестандартные маршруты и новые, запоминающиеся места подарят море впечатлений
                                         
                 section.main__tours-short.tours-short.m-120-60
-                    .tours-short__container.container
+                    .tours-short__container.container-1
                         .tours-short__heading
                             h2.tours-short__title.title-2 Ближайшие туры
                             .tours-short__text.text-lead Чтобы принять участие перейдите на страницу тура и нажмите на кнопку «Записаться»
@@ -156,7 +157,7 @@ html(lang='RU')
                                             a(href='#').tour-card__link-button.button-2.text-bold.hide-M Смотреть тур
                                     
                 section.main__about-short.about-short.m-120-60
-                    .about-short__container.container
+                    .about-short__container.container-1
                         .about-short__row(data-sticky-wrapper)
                             .about-short__col.about-short__col--1(data-sticky-content)
                                 h2.about-short__title.title-1 Treeple.kz — авторские туры по Казахстану и ваши самые яркие воспоминания
@@ -166,7 +167,7 @@ html(lang='RU')
                                 +wrappedImage('about-short__image-photo', 'assets/img/generic/photo-1.jpg', 'assets/img/generic/photo-1@2x.jpg 2x', 'Фото тура')
                                 
                 section.main__reviews.reviews.m-120-60
-                    .reviews__container.container
+                    .reviews__container.container-1
                         .reviews__heading
                             h2.reviews__title.title-2 Отзывы
                             .reviews__text.text-lead Наши клиенты рады рассказать о своих путешествиях! Читайте больше отзывов в нашем <a href='#' target='_blank'>Instagram</a>
@@ -188,7 +189,7 @@ html(lang='RU')
                                 a(href='#' target='_blank').review-card__link-button.button-colored.text-desc Смотреть отзыв
                 
                 section.main__guide.guide.m-120-60
-                    .guide__container.container
+                    .guide__container.container-1
                         .guide__heading
                             h2.guide__title.title-2 Путеводитель
                             a(href='#').guide__link-button.button-white.text-desc.hide-M Смотреть все регионы
@@ -242,7 +243,7 @@ html(lang='RU')
                                 a(href='#').guide__link-button.button-white.text-desc.show-M Смотреть все регионы
                 
                 section.main__gallery.gallery.m-120-60
-                    .gallery__container.container
+                    .gallery__container.container-1
                         h2.gallery__title.title-2 Вдохновляем на путешествия!
                     .gallery__ticker.gallery-ticker
                         ul.gallery-ticker__list.gallery-ticker__list--1

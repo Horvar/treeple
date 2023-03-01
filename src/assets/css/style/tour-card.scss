@@ -286,3 +286,43 @@
 }
 
 .tour-card-duration__text {}
+
+//living
+
+.tour-card-living {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @media (max-width: $resM) {
+    gap: 8px;
+  }
+}
+
+.tour-card-living__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.tour-card-living__svg-icon {
+  grid-row: span 2;
+  
+  display: flex;
+  
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+  
+  color: $clrPink;
+
+  @media (max-width: $resM) {
+    min-width: 32px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.tour-card-living__description {}
+
+.tour-card-living__text {}

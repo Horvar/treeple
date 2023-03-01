@@ -1,0 +1,368 @@
+include ../../partials/mixins
+    
+-
+    tourSummary1 = [
+        'Просыпающийся Алтай',
+        'Встреча с травником',
+        'Загадки старообрядчества',
+        'Необычный транспорт'
+    ]
+    tourSummary2 = [
+        'один из видов активного отдыха, который проводит человек в свое свободное время',
+        'один из видов активного отдыха, который проводит человек в свое свободное время',
+        'один из видов активного отдыха, который проводит человек в свое свободное время'
+    ]
+    tourFolders = [
+        {
+            day: '1 день',
+            title: 'Прибытие в Усть-Коксу'
+        },
+        {
+            day: '2 день',
+            title: 'Трансфер. Знакомство с Алтаем. Остров Патмос и огроменная в плане текста Чемальская ГЭС'
+        },
+        {
+            day: '3 день',
+            title: 'Радиальный выход на гору Маяк'
+        },
+        {
+            day: '4 день',
+            title: 'Встреча с травником'
+        },
+        {
+            day: '5 день',
+            title: 'Экскурсия на Мультинские озера'
+        },
+        {
+            day: '6 день',
+            title: 'Поездка в Тюнгур. Вид на Белуху'
+        }
+    ]
+    tourBenefitsPositive = [
+        'групповой трансфер из/в аэропорт Горно-Алтайска;',
+        'трехразовое питание (в кафе);',
+        'перевозки, согласно программе тура;',
+        'оплата проживания в парк-отель "Подгорица" 3*;',
+        'моторные лодки;',
+        'работа гида;',
+        'войлочный мастер-класс;',
+        'оплата сборов за посещение экскурсионных объектов;'
+    ]
+    tourBenefitsNegative = [
+        'авиа- и ж/д билеты до г. Барнаул, г. Горно-Алтайск, г. Новосибирск и обратно;',
+        'доставка до эко-отеля "Таежник" и обратно, за исключением группового трансфера из/в аэропорт Горно-Алтайска;',
+        'страховка от клеща 400 рублей.'
+    ]
+    
+mixin tourFolded
+    p Завтрак в кафе на территории эко-отеля.
+    p В этот день туристы совершат экскурсию на моторных лодках по реке Катунь к Камышлинскому водопаду, который расположился на левом берегу Катуни и имеет высоту более 15 м.
+    p У гостей будет возможность подняться на смотровую площадку, погулять по территории водопада и увидеть кроликов.
+    p После прогулки – гости Алтая посетят сырный Мастер-класс в этно-деревне «Берендеевка», где не только узнают как готовится сыр, но и отведают его.
+    br
+    p Обед в кафе на территории этно-отеля.
+    p Посещение Зубрового питомника – экспериментального хозяйства, единственного за Уралом.
+    br
+    p Возвращение в Таёжник.
+    br
+    p Ужин в кафе эко-отеля.
+
+doctype html
+html(lang='RU')
+    include ../../partials/head
+    +head('Туры - подробно')
+    body.body
+        .body__wrapper(style='opacity:0; overflow:hidden')
+    
+            +header('body__header')
+    
+            main.body__main.main
+                section.main__intro.intro.intro--bg-2.intro--shorter.m-60-30
+                    .intro__container.container-2(data-screen-height='540')
+                        .intro__wrapper.intro__wrapper--2
+                            h1.intro__title.intro__title--2.title-1 Путешествие к сердцу Алтая
+                            .intro__text.intro__text--2.text-lead Атырау
+                                
+                .main__row.container-2.m-120-60
+                    .main__col.main__col--1
+                        
+                        section.main__tour-details.tour-details.m-120-60
+                            .tour-details__container
+                                h2.tour-details__title.hide-B Описание тура
+                                .tour-details__text.text-common.m-30-15
+                                    p Вы отправитесь в путешествие, где за 11 дней познакомитесь с самыми красивыми, значимыми и энергетически сильными местами Алтая. Этой дорогой шла экспедиция семьи Рерихов в поисках таинственной Шамбалы, и староверы, переселившиеся сюда много столетий назад. Вы побываете в главной шаманской долине, проплывете на рафте по р. Катунь, побываете на Мультинских и Красногорских озерах, посетите поселение старообрядцев, увидите белоснежные шапки Катунского хребта, долину водопадов и многое, многое другое.
+                                .tour-details__gallery.tour-details-gallery
+                                    ul.tour-details-gallery__list.m-30-15
+                                        li.tour-details-gallery__item
+                                            a(href='assets/img/gallery/photo-11.jpg' data-fancybox='galleryTour').tour-details-gallery__link-wrapper
+                                                +wrappedImage('tour-details-gallery__image-photo', 'assets/img/gallery/photo-11.jpg', 'assets/img/gallery/photo-11@2x.jpg 2x', 'Фото тура')
+                                        li.tour-details-gallery__item
+                                            a(href='assets/img/gallery/photo-12.jpg' data-fancybox='galleryTour').tour-details-gallery__link-wrapper
+                                                +wrappedImage('tour-details-gallery__image-photo', 'assets/img/gallery/photo-12.jpg', 'assets/img/gallery/photo-12@2x.jpg 2x', 'Фото тура')
+                                        li.tour-details-gallery__item
+                                            a(href='assets/img/gallery/photo-13.jpg' data-fancybox='galleryTour').tour-details-gallery__link-wrapper
+                                                +wrappedImage('tour-details-gallery__image-photo', 'assets/img/gallery/photo-13.jpg', 'assets/img/gallery/photo-13@2x.jpg 2x', 'Фото тура')
+                                        li.tour-details-gallery__item
+                                            a(href='assets/img/gallery/photo-14.jpg' data-fancybox='galleryTour').tour-details-gallery__link-wrapper
+                                                +wrappedImage('tour-details-gallery__image-photo', 'assets/img/gallery/photo-14.jpg', 'assets/img/gallery/photo-14@2x.jpg 2x', 'Фото тура')
+                                        
+                                        li.tour-details-gallery__item
+                                            button(type='button' data-fancy-trigger='galleryTour').tour-details-gallery__button-more.text-small
+                                                svg
+                                                    use(href='assets/svg/sprite.svg#angle1')
+                                                span Больше фото
+                                        
+                                        li.tour-details-gallery__item.hide-B
+                                            a(href='assets/img/gallery/photo-11.jpg' data-fancybox='galleryTour').tour-details-gallery__link-wrapper
+                                                +wrappedImage('tour-details-gallery__image-photo', 'assets/img/gallery/photo-11.jpg', 'assets/img/gallery/photo-11@2x.jpg 2x', 'Фото тура')
+                                        li.tour-details-gallery__item.hide-B
+                                            a(href='assets/img/gallery/photo-12.jpg' data-fancybox='galleryTour').tour-details-gallery__link-wrapper
+                                                +wrappedImage('tour-details-gallery__image-photo', 'assets/img/gallery/photo-12.jpg', 'assets/img/gallery/photo-12@2x.jpg 2x', 'Фото тура')
+                                        li.tour-details-gallery__item.hide-B
+                                            a(href='assets/img/gallery/photo-13.jpg' data-fancybox='galleryTour').tour-details-gallery__link-wrapper
+                                                +wrappedImage('tour-details-gallery__image-photo', 'assets/img/gallery/photo-13.jpg', 'assets/img/gallery/photo-13@2x.jpg 2x', 'Фото тура')
+                                        li.tour-details-gallery__item.hide-B
+                                            a(href='assets/img/gallery/photo-14.jpg' data-fancybox='galleryTour').tour-details-gallery__link-wrapper
+                                                +wrappedImage('tour-details-gallery__image-photo', 'assets/img/gallery/photo-14.jpg', 'assets/img/gallery/photo-14@2x.jpg 2x', 'Фото тура')
+                                .tour-details__summary.tour-details-summary
+                                    .tour-details-summary__row
+                                        .tour-details-summary__col.tour-details-summary__col--1
+                                            h3.tour-details-summary__title.text-bold Самое главное
+                                        .tour-details-summary__col.tour-details-summary__col--2
+                                            ul.tour-details-summary__list
+                                                each val in tourSummary1
+                                                    li.tour-details-summary__item.text-common=val
+                                    .tour-details-summary__row
+                                        .tour-details-summary__col.tour-details-summary__col--1
+                                            h3.tour-details-summary__title.text-bold Стоит взять
+                                        .tour-details-summary__col.tour-details-summary__col--2
+                                            ul.tour-details-summary__list
+                                                each val in tourSummary2
+                                                    li.tour-details-summary__item.text-common=val
+                    
+                    
+                        
+                        section.main__tour-info.tour-info.m-120-60.show-M
+                            .tour-info__subsection
+                                .tour-info__wrapper
+                                    .tour-info__price.title-price 324 600 ₸
+                                    .tour-info__text.tour-info__text--1.text-common + Билеты до места
+                                a(href='#').tour-info__link-button.button-1.text-bold Забронировать места
+                                .tour-info__wrapper
+                                    h3.tour-info__title.text-bold Оператор тура
+                                    a(href='#').tour-info__link-text Aqtobe Trips
+                                .tour-info__wrapper
+                                    h3.tour-info__title.text-bold Продолжительность
+                                    .tour-info__duration.tour-card-duration
+                                        .tour-card-duration__wrapper
+                                            svg.tour-card-duration__svg-icon
+                                                use(href='assets/svg/sprite.svg#day')
+                                            .tour-card-duration__text.text-small 7 дней
+                                        .tour-card-duration__wrapper
+                                            svg.tour-card-duration__svg-icon
+                                                use(href='assets/svg/sprite.svg#night')
+                                            .tour-card-duration__text.text-small 6 ночей
+
+                            .tour-info__subsection
+                                .tour-info__wrapper
+                                    h3.tour-info__title.text-bold Даты набора групп
+                                    .tour-info__text.tour-info__text--1.text-common 20—31 марта 2023 г.
+                                    .tour-info__text.tour-info__text--1.text-common 01—11 апреля 2023 г.
+                                    .tour-info__text.tour-info__text--1.text-common 11—22 апреля 2023 г.
+                                    .tour-info__text.tour-info__text--1.text-common 22—31 апреля 2023 г.
+
+                            .tour-info__subsection
+                                .tour-info__wrapper
+                                    h3.tour-info__title.text-bold Место сбора группы
+                                    .tour-info__text.tour-info__text--1.text-common г. Актобе
+                                .tour-info__wrapper
+                                    h3.tour-info__title.text-bold Проживание во время тура
+                                    .tour-info__living.tour-card-living
+                                        .tour-card-living__wrapper
+                                            svg.tour-card-living__svg-icon
+                                                use(href='assets/svg/sprite.svg#livingHotel')
+                                            .tour-card-living__description
+                                                .tour-card-living__text.tour-card-living__text--1.text-common Гостиница
+                                                .tour-card-living__text.tour-card-living__text--2.text-small 3 ночи
+                                        .tour-card-living__wrapper
+                                            svg.tour-card-living__svg-icon
+                                                svg.tour-card-living__svg-icon
+                                                    use(href='assets/svg/sprite.svg#livingHouse')
+                                            .tour-card-living__description
+                                                .tour-card-living__text.tour-card-living__text--1.text-common Турбаза
+                                                .tour-card-living__text.tour-card-living__text--2.text-small 2 ночи
+                                        .tour-card-living__wrapper
+                                            svg.tour-card-living__svg-icon
+                                                svg.tour-card-living__svg-icon
+                                                    use(href='assets/svg/sprite.svg#livingCamp')
+                                            .tour-card-living__description
+                                                .tour-card-living__text.tour-card-living__text--1.text-common Кемпинг
+                                                .tour-card-living__text.tour-card-living__text--2.text-small 2 ночи
+
+                            .tour-info__subsection
+                                .tour-info__wrapper
+                                    h3.tour-info__title.text-bold Комфорт
+                                    .tour-card__comfort.tour-card-comfort
+                                        .tour-card-comfort__level.text-small Базовый
+                                .tour-info__wrapper
+                                    h3.tour-info__title.text-bold Сложность
+                                    .tour-card__difficulty.tour-card-difficulty
+                                        .tour-card-difficulty__text.text-small Средняя
+                                        ul.tour-card-difficulty__rating
+                                            li 1
+                                            li.is-current 2
+                                            li 3
+                                            li 4
+
+                        section.main__tour-rules.tour-rules.m-120-60
+                            h2.tour-rules__title.title-2.m-40-20 Программа тура
+                            
+                            .tour-rules__wrapper.m-20-10
+                                a(href='#' download).tour-rules__link-download.text-bold
+                                    svg
+                                        use(href='assets/svg/sprite.svg#docPdf')
+                                    span Скачать программу тура в PDF
+                                a(href='#' download).tour-rules__link-download.text-bold
+                                    svg
+                                        use(href='assets/svg/sprite.svg#docPdf')
+                                    span Скачать памятку туриста в PDF
+                                
+                            .tour-rules__folders.tour-rules-folders
+                                ul.tour-rules-folders__list
+                                    each val in tourFolders
+                                        li.tour-rules-folders__item.tour-rules-folders-item
+                                            .tour-rules-folders-item__heading(data-folder-trigger)
+                                                .tour-rules-folders-item__day.text-common=val.day
+                                                h3.tour-rules-folders-item__title.text-bold=val.title
+                                                svg.tour-rules-folders-item__svg-icon
+                                                    use(href='assets/svg/sprite.svg#angle1')
+                                            .tour-rules-folders-item__content(data-folder-content)
+                                                .tour-rules-folders-item__text.text-common
+                                                    +tourFolded
+                        
+                        section.main__tour-rules.tour-rules
+                            h2.tour-rules__title.title-2.m-40-20 Условия тура
+                                
+                            .tour-rules__folders.tour-rules-folders
+                                ul.tour-rules-folders__list
+                                    
+                                    li.tour-rules-folders__item.tour-rules-folders-item.tour-rules-folders-item--no-day
+                                        .tour-rules-folders-item__heading(data-folder-trigger)
+                                            h3.tour-rules-folders-item__title.text-bold Входит в стоимость
+                                            svg.tour-rules-folders-item__svg-icon
+                                                use(href='assets/svg/sprite.svg#angle1')
+                                        .tour-rules-folders-item__content(data-folder-content)
+                                            .tour-rules-folders-item__benefits.tour-rules-folders-item-benefits
+                                                ul.tour-rules-folders-item-benefits__list
+                                                    each val in tourBenefitsPositive
+                                                        li.tour-rules-folders-item-benefits__item
+                                                            svg.tour-rules-folders-item-benefits__svg-positive
+                                                                use(href='assets/svg/sprite.svg#markPositive')
+                                                            .tour-rules-folders-item-benefits__text.text-common=val
+                                    
+                                    li.tour-rules-folders__item.tour-rules-folders-item.tour-rules-folders-item--no-day
+                                        .tour-rules-folders-item__heading(data-folder-trigger)
+                                            h3.tour-rules-folders-item__title.text-bold Оплачивается отдельно
+                                            svg.tour-rules-folders-item__svg-icon
+                                                use(href='assets/svg/sprite.svg#angle1')
+                                        .tour-rules-folders-item__content(data-folder-content)
+                                            .tour-rules-folders-item__benefits.tour-rules-folders-item-benefits
+                                                ul.tour-rules-folders-item-benefits__list
+                                                    each val in tourBenefitsNegative
+                                                        li.tour-rules-folders-item-benefits__item
+                                                            svg.tour-rules-folders-item-benefits__svg-positive
+                                                                use(href='assets/svg/sprite.svg#markNegative')
+                                                            .tour-rules-folders-item-benefits__text.text-common=val
+                                                
+                    .main__col.main__col--2.hide-M
+                        
+                        section.main__tour-info.tour-info
+                            .tour-info__subsection
+                                .tour-info__wrapper
+                                    .tour-info__price.title-price 324 600 ₸
+                                    .tour-info__text.tour-info__text--1.text-common + Билеты до места
+                                a(href='#').tour-info__link-button.button-1.text-bold Забронировать места
+                                .tour-info__wrapper
+                                    h3.tour-info__title.text-bold Оператор тура
+                                    a(href='#').tour-info__link-text Aqtobe Trips
+                                .tour-info__wrapper
+                                    h3.tour-info__title.text-bold Продолжительность
+                                    .tour-info__duration.tour-card-duration
+                                        .tour-card-duration__wrapper
+                                            svg.tour-card-duration__svg-icon
+                                                use(href='assets/svg/sprite.svg#day')
+                                            .tour-card-duration__text.text-small 7 дней
+                                        .tour-card-duration__wrapper
+                                            svg.tour-card-duration__svg-icon
+                                                use(href='assets/svg/sprite.svg#night')
+                                            .tour-card-duration__text.text-small 6 ночей
+                                                
+                            .tour-info__subsection
+                                .tour-info__wrapper
+                                    h3.tour-info__title.text-bold Даты набора групп
+                                    .tour-info__text.tour-info__text--1.text-common 20—31 марта 2023 г.
+                                    .tour-info__text.tour-info__text--1.text-common 01—11 апреля 2023 г.
+                                    .tour-info__text.tour-info__text--1.text-common 11—22 апреля 2023 г.
+                                    .tour-info__text.tour-info__text--1.text-common 22—31 апреля 2023 г.
+                                        
+                            .tour-info__subsection
+                                .tour-info__wrapper
+                                    h3.tour-info__title.text-bold Место сбора группы
+                                    .tour-info__text.tour-info__text--1.text-common г. Актобе
+                                .tour-info__wrapper
+                                    h3.tour-info__title.text-bold Проживание во время тура
+                                    .tour-info__living.tour-card-living
+                                        .tour-card-living__wrapper
+                                            svg.tour-card-living__svg-icon
+                                                use(href='assets/svg/sprite.svg#livingHotel')
+                                            .tour-card-living__description
+                                                .tour-card-living__text.tour-card-living__text--1.text-common Гостиница
+                                                .tour-card-living__text.tour-card-living__text--2.text-small 3 ночи
+                                        .tour-card-living__wrapper
+                                            svg.tour-card-living__svg-icon
+                                                svg.tour-card-living__svg-icon
+                                                    use(href='assets/svg/sprite.svg#livingHouse')
+                                            .tour-card-living__description
+                                                .tour-card-living__text.tour-card-living__text--1.text-common Турбаза
+                                                .tour-card-living__text.tour-card-living__text--2.text-small 2 ночи
+                                        .tour-card-living__wrapper
+                                            svg.tour-card-living__svg-icon
+                                                svg.tour-card-living__svg-icon
+                                                    use(href='assets/svg/sprite.svg#livingCamp')
+                                            .tour-card-living__description
+                                                .tour-card-living__text.tour-card-living__text--1.text-common Кемпинг
+                                                .tour-card-living__text.tour-card-living__text--2.text-small 2 ночи
+                                        
+                            .tour-info__subsection
+                                .tour-info__wrapper
+                                    h3.tour-info__title.text-bold Комфорт
+                                    .tour-card__comfort.tour-card-comfort
+                                        .tour-card-comfort__level.text-small Базовый
+                                .tour-info__wrapper
+                                    h3.tour-info__title.text-bold Сложность
+                                    .tour-card__difficulty.tour-card-difficulty
+                                        .tour-card-difficulty__text.text-small Средняя
+                                        ul.tour-card-difficulty__rating
+                                            li 1
+                                            li.is-current 2
+                                            li 3
+                                            li 4
+
+                section.associated-tours.m-120-60
+                    .associated-tours__container.container-2
+                        h2.associated-tours__title.title-2.m-40-20 Похожие туры
+                        ul.associated-tours__list
+                            - var i = 0
+                            while i < 4
+                                - i++
+                                li.associated-tours__item.associated-card
+                                    a(href='#').associated-card__link-wrapper
+                                        +wrappedImage('associated-card__image-photo', 'assets/img/tours/photo-1.jpg', 'assets/img/tours/photo-1@2x.jpg 2x', 'Фото тура')
+                                        .associated-card__description
+                                            .associated-card__about.text-small Знакомство с Алтаем. Вдоль Чуйского тракта и Марсианские горы. Зимний отдых
+                                            .associated-card__wrapper
+                                                .associated-card__price.title-3 324 600 ₸
+                                                .associated-card__duration.text-small 7 дней
+                                            .associated-card__subtitle.text-small Даты набора групп
+                                            .associated-card__date.text-common 20—31 марта 2023 г.
+            +footer('body__footer')

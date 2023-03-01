@@ -28,12 +28,18 @@
     .header {
       transform: translate3d(0, -50%, 0);
     }
+    .main__tour-info {
+      opacity: 0;
+    }
   }
   &.is-loaded {
     animation: bodyShow 1s ease forwards;
     
     .header {
       transition: .75s ease;
+    }
+    .main__tour-info {
+      transition: opacity .5s .5s;
     }
   }
 }

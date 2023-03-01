@@ -1,26 +1,63 @@
 .intro {
-  background: url("assets/img/banner-1.jpg") top left / 100% auto fixed;
+  &--bg-1 {
+    background: url("assets/img/banner-1.jpg") top left / 100% auto fixed;
+
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+      background: url("assets/img/banner-1@2x.jpg") top left / cover no-repeat;
+    }
+  }
+  &--bg-2 {
+    background: url("assets/img/banner-3.jpg") top left / 100% auto fixed;
+
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+      background: url("assets/img/banner-3@2x.jpg") top left / cover no-repeat;
+    }
+  }
   
-  @media
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (   min--moz-device-pixel-ratio: 2),
-  only screen and (     -o-min-device-pixel-ratio: 2/1),
-  only screen and (        min-device-pixel-ratio: 2),
-  only screen and (                min-resolution: 192dpi),
-  only screen and (                min-resolution: 2dppx) {
-    background: url("assets/img/banner-1@2x.jpg") top left / cover no-repeat;
+  &:not(&--shorter, &--shortest) {
+    .intro__container {
+      height: 660px;
+      @media (max-width: $resM) {
+        height: 574px;
+      }
+    }
   }
 
-
+  &--shorter {
+    .intro__container {
+      height: 600px;
+      @media (max-width: $resM) {
+        height: 237px;
+      }
+    }
+  }
+  &--shortest {
+    .intro__container {
+      height: 519px;
+      @media (max-width: $resM) {
+        height: 330px;
+      }
+      @media (max-width: $resS) {
+        height: 364px;
+      }
+    }
+  }
 }
 
 .intro__container {
-  height: 660px;
   position: relative;
-
-  @media (max-width: $resM) {
-    height: 574px;
-  }
 }
 
 .intro__image-background {
@@ -29,27 +66,54 @@
   }
 }
 
-.intro__text {
-  width: 395px;
+.intro__wrapper {
+  &--1 {
+    width: 395px;
 
-  position: absolute;
-  bottom: 60px;
-  right: 0;
-  
-  color: $clrWhite;
-
-  @media (max-width: $resM) {
-    width: 369px;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
     
-    right: auto;
+    @media (max-width: $resM) {
+      width: 369px;
+
+      right: auto;
+      left: 0;
+      bottom: 77px;
+    }
+    @media (max-width: $resS) {
+      width: 100%;
+
+      bottom: 30px;
+    }
+  }
+  &--2 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    position: absolute;
+    bottom: 40px;
     left: 0;
-    bottom: 77px;
+
+    @media (max-width: $resM) {
+      gap: 4px;
+      bottom: 20px;
+    }
   }
-  @media (max-width: $resS) {
-    width: 100%;
-    
-    bottom: 30px;
-  }
+  &--3 {}
+}
+
+.intro__title {
+  color: $clrWhite;
+}
+
+.intro__text {
+  color: $clrWhite;
+  
+  &--1 {}
+  &--2 {}
+  &--3 {}
 }
 
 //search

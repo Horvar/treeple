@@ -1,7 +1,8 @@
 const path = require('path')
 
 const componentList = [
-    'index'
+    'index',
+    'tour-detail'
 ]
 
 const entryList = componentList.reduce((entries, componentName) => {

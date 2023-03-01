@@ -1,1 +1,27 @@
 .main {}
+
+.main__row {
+  display: flex;
+  gap: $wGutterBase;
+}
+
+.main__col {
+  &--1 {
+    width: $wColBase * 7 + $wGutterBase * 6;
+
+    @media (max-width: $resM) {
+      width: 100%;
+    }
+  }
+  &--2 {
+    width: $wColBase * 3 + $wGutterBase * 2;
+  }
+}
+
+.main__tour-info {
+  margin-top: -188px;
+
+  @media (max-width: $resM) {
+    margin-top: 0;
+  }
+}

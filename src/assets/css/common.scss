@@ -240,8 +240,19 @@ picture {
   outline: none;
 }
 
-.container {
+.container-1 {
   width: $wColBase * 12 + $wGutterBase * 11;
+  margin: 0 auto;
+
+  @media (max-width: $resM) {
+    width: $wColM * 4 + $wGutterM * 3;
+  }
+  @media (max-width: $resS) {
+    width: $wColXS * 4 + $wGutterXS * 3;
+  }
+}
+.container-2 {
+  width: $wColBase * 10 + $wGutterBase * 10;
   margin: 0 auto;
 
   @media (max-width: $resM) {
@@ -347,5 +358,33 @@ picture {
 
   @media (max-width: $resM) {
     margin-bottom: 60px;
+  }
+}
+.m-60-30 {
+  margin-bottom: 60px;
+
+  @media (max-width: $resM) {
+    margin-bottom: 30px;
+  }
+}
+.m-40-20 {
+  margin-bottom: 40px;
+
+  @media (max-width: $resM) {
+    margin-bottom: 20px;
+  }
+}
+.m-30-15 {
+  margin-bottom: 30px;
+
+  @media (max-width: $resM) {
+    margin-bottom: 15px;
+  }
+}
+.m-20-10 {
+  margin-bottom: 20px;
+
+  @media (max-width: $resM) {
+    margin-bottom: 10px;
   }
 }
