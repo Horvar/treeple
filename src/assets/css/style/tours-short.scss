@@ -41,3 +41,13 @@
 }
 
 .tours-short__item {}
+
+.tours-short__pagination {
+  margin-top: 80px;
+  
+  grid-column: 1/-1;
+
+  @media (max-width: $resM) {
+    margin-top: 40px;
+  }
+}

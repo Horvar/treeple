@@ -81,6 +81,18 @@
 
 //title
 
+.title-huge {
+  font-weight: 600;
+  font-size: 66px;
+  line-height: 120%;
+
+  @media (max-width: $resM) {
+    font-size: 28px;
+  }
+  @media (max-width: $resS) {
+    font-size: 28px;
+  }
+}
 .title-1 {
   font-weight: 600;
   font-size: 48px;

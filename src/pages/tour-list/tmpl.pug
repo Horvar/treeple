@@ -1,0 +1,261 @@
+include ../../partials/mixins
+    
+doctype html
+html(lang='RU')
+    include ../../partials/head
+    +head('Туры - список')
+    body.body
+        .body__wrapper(style='opacity:0; overflow:hidden')
+    
+            +header('body__header')
+    
+            main.body__main.main
+                section.main__intro.intro.intro--bg-2.intro--shortest.m-60-30
+                    .intro__container.container-1(data-screen-height='540')
+                        .intro__wrapper.intro__wrapper--3
+                            h1.intro__title.intro__title--2.title-huge.m-60-30 Поиск туров и&nbsp;приключений
+                            nav.intro-search__sort-variations.sort-variations.hide-M
+                                ul.sort-variations__list
+                                    li.sort-variations__item
+                                        a.sort-variations__link-wrapper.text-bold.is-current Многодневные
+                                    li.sort-variations__item
+                                        a.sort-variations__link-wrapper.text-bold Однодневые
+                                    li.sort-variations__item
+                                        a.sort-variations__link-wrapper.text-bold Необычные
+                                    li.sort-variations__item
+                                        a.sort-variations__link-wrapper.text-bold Индивидуальные
+                            .intro__search.intro__search--2.intro-search
+                                .intro-search__select.intro-search-select
+                                    svg.intro-search-select__svg-icon
+                                        use(href='assets/svg/sprite.svg#flag')
+                                    select(name='place' data-placeholder='Куда вы хотите?' data-select-main)
+                                        option
+                                        option(value="1") Абай
+                                        option(value="2") Акколь
+                                        option(value="3") Аксай
+                                        option(value="4") Аксу
+                                        option(value="5") Актау
+                                        option(value="6") Актобе
+                                        option(value="7") Алга
+                                        option(value="8") Алматы
+                                    .intro-search-select__dropdown
+                            
+                                .intro-search__datepicker.intro-search-datepicker.text-lead(id='datepickerMain')
+                                    output Даты
+                                    svg.intro-search-select__svg-icon
+                                        use(href='assets/svg/sprite.svg#calendar')
+
+            .main__row.container-1.m-120-60
+                    .main__col.main__col--2
+                        .main__filter.filter
+                            .filter__folder.filter-folder
+                            .filter-folder__heading(data-folder-trigger)
+                                svg.filter-folder__svg-icon
+                                    use(href='assets/svg/sprite.svg#filter')
+                                h2.filter-folder__title.title-special Фильтры
+                                svg.filter-folder__svg-angle
+                                    use(href='assets/svg/sprite.svg#angle1')
+                            .filter-folder__content(data-folder-content)
+                                ul.filter-folder__list
+                                    li.filter-folder__item.filter-folder-sub
+                                        .filter-folder-sub__heading(data-folder-trigger)
+                                            svg.filter-folder-sub__svg-angle
+                                                use(href='assets/svg/sprite.svg#angle1')
+                                            h3.filter-folder-sub__title.text-small Цена
+                                        .filter-folder-sub__content(data-folder-content)
+                                            .filter-folder-sub__wrapper
+                                                .filter__range.filter-range
+                                                    .filter-range__slider(id="priceRangeSlider" data-min='1000' data-max='10000')
+                                                .filter-range__output
+                                                    output
+                                                        span.text-small от
+                                                        span.text-common(id="priceRangeStart")
+                                                    output
+                                                        span.text-small до
+                                                        span.text-common(id="priceRangeEnd")
+                                    li.filter-folder__item.filter-folder-sub
+                                        .filter-folder-sub__heading(data-folder-trigger)
+                                            svg.filter-folder-sub__svg-angle
+                                                use(href='assets/svg/sprite.svg#angle1')
+                                            h3.filter-folder-sub__title.text-small Продолжительность
+                                        .filter-folder-sub__content(data-folder-content)
+                                            .filter-folder-sub__wrapper
+                                                ul.filter__check-list
+                                                    li.filter__check-item.filter-check-item
+                                                        label.filter-check-item__label-checkbox.text-small
+                                                            input(type='checkbox')
+                                                            span Групповые
+                                                    li.filter__check-item.filter-check-item
+                                                        label.filter-check-item__label-checkbox.text-small
+                                                            input(type='checkbox')
+                                                            span Индивидуальные
+                                    li.filter-folder__item.filter-folder-sub
+                                        .filter-folder-sub__heading(data-folder-trigger)
+                                            svg.filter-folder-sub__svg-angle
+                                                use(href='assets/svg/sprite.svg#angle1')
+                                            h3.filter-folder-sub__title.text-small ЧИСЛО УЧАСТНИКОВ
+                                        .filter-folder-sub__content(data-folder-content)
+                                            .filter-folder-sub__wrapper
+                                                ul.filter__check-list
+                                                    li.filter__check-item.filter-check-item
+                                                        label.filter-check-item__label-checkbox.text-small
+                                                            input(type='checkbox')
+                                                            span Групповые
+                                                    li.filter__check-item.filter-check-item
+                                                        label.filter-check-item__label-checkbox.text-small
+                                                            input(type='checkbox')
+                                                            span Индивидуальные
+                                    li.filter-folder__item.filter-folder-sub
+                                        .filter-folder-sub__heading(data-folder-trigger)
+                                            svg.filter-folder-sub__svg-angle
+                                                use(href='assets/svg/sprite.svg#angle1')
+                                            h3.filter-folder-sub__title.text-small УРОВЕНЬ СЛОЖНОСТИ
+                                        .filter-folder-sub__content(data-folder-content)
+                                            .filter-folder-sub__wrapper
+                                                ul.filter__check-list
+                                                    li.filter__check-item.filter-check-item
+                                                        label.filter-check-item__label-checkbox.text-small
+                                                            input(type='checkbox')
+                                                            span Базовый
+                                                    li.filter__check-item.filter-check-item
+                                                        label.filter-check-item__label-checkbox.text-small
+                                                            input(type='checkbox')
+                                                            span Средний
+                                                    li.filter__check-item.filter-check-item
+                                                        label.filter-check-item__label-checkbox.text-small
+                                                            input(type='checkbox')
+                                                            span Продвинутый
+                                                    li.filter__check-item.filter-check-item
+                                                        label.filter-check-item__label-checkbox.text-small
+                                                            input(type='checkbox')
+                                                            span Сложный
+                                    li.filter-folder__item.filter-folder-sub
+                                        .filter-folder-sub__heading(data-folder-trigger)
+                                            svg.filter-folder-sub__svg-angle
+                                                use(href='assets/svg/sprite.svg#angle1')
+                                            h3.filter-folder-sub__title.text-small Оператор
+                                        .filter-folder-sub__content(data-folder-content)
+                                            .filter-folder-sub__wrapper
+                                                ul.filter__check-list
+                                                    li.filter__check-item.filter-check-item
+                                                        label.filter-check-item__label-checkbox.text-small
+                                                            input(type='checkbox')
+                                                            span Базовый
+                                                    li.filter__check-item.filter-check-item
+                                                        label.filter-check-item__label-checkbox.text-small
+                                                            input(type='checkbox')
+                                                            span Средний
+                                                    li.filter__check-item.filter-check-item
+                                                        label.filter-check-item__label-checkbox.text-small
+                                                            input(type='checkbox')
+                                                            span Продвинутый
+                                                    li.filter__check-item.filter-check-item
+                                                        label.filter-check-item__label-checkbox.text-small
+                                                            input(type='checkbox')
+                                                            span Сложный
+                                    li.filter-folder__item.filter-folder-sub
+                                        .filter-folder-sub__heading(data-folder-trigger)
+                                            svg.filter-folder-sub__svg-angle
+                                                use(href='assets/svg/sprite.svg#angle1')
+                                            h3.filter-folder-sub__title.text-small Подборки
+                                        .filter-folder-sub__content(data-folder-content)
+                                            .filter-folder-sub__wrapper
+                                                ul.filter__check-list
+                                                    li.filter__check-item.filter-check-item
+                                                        label.filter-check-item__label-checkbox.text-small
+                                                            input(type='checkbox')
+                                                            span Базовый
+                                                    li.filter__check-item.filter-check-item
+                                                        label.filter-check-item__label-checkbox.text-small
+                                                            input(type='checkbox')
+                                                            span Средний
+                                                    li.filter__check-item.filter-check-item
+                                                        label.filter-check-item__label-checkbox.text-small
+                                                            input(type='checkbox')
+                                                            span Продвинутый
+                                                    li.filter__check-item.filter-check-item
+                                                        label.filter-check-item__label-checkbox.text-small
+                                                            input(type='checkbox')
+                                                            span Сложный
+                        
+                                    li.filter-folder__item.filter-folder-sub
+                                        button(type='button').filter__button-reset.text-bold
+                                            span Сбросить все фильтры
+                                            svg
+                                                use(href='assets/svg/sprite.svg#cross1')
+                    
+                    .main__col.main__col--1
+                        section.main__tours-short.tours-short
+                            .tours-short__container
+                                h2.tours-short__title.title-2.m-40-20.hide-B Список туров
+                                .main__sort.sort.m-40-20
+                                    .sort__number.text-common
+                                        span 144
+                                        span тура
+                                    .sort__type.sort-type
+                                        .sort-type__text.text-common Сортировать:
+                                        button(type='button').sort-type__button.text-common.is-inverse
+                                            span Популярность
+                                            svg
+                                                use(href='assets/svg/sprite.svg#angle1')
+                                ul.tours-short__list
+                                    - var i = 0
+                                    while i < 4
+                                        - i++
+                                        li.tours-short__item.tour-card.tour-card--short
+                                            .tour-card__row
+                                                .tour-card__col.tour-card__col--2
+                                                    +wrappedImage('tour-card__image-photo', 'assets/img/tours/photo-1.jpg', 'assets/img/tours/photo-1@2x.jpg 2x', 'Фото тура')
+                                                .tour-card__col.tour-card__col--3
+                                                    h3.tour-card__title.title-special Знакомство с Алтаем. Вдоль Чуйского тракта и Марсианские горы. Зимний отдых
+                                                    .tour-card__text.text-small.hide-M Вы отправитесь в путешествие, где за 11 дней познакомитесь с самыми красивыми, значимыми и энергетически сильными местами Алтая. Этой дорогой шла экспедиция семьи Рерихов ... 
+                                                    ul.tour-card__tag-cloud.tour-card-tag-cloud.hide-M
+                                                        li.tour-card-tag-cloud__item.text-small Туры выходного дня
+                                                        li.tour-card-tag-cloud__item.text-small Пешие туры
+                                                    .tour-card__wrapper
+                                                        .tour-card__difficulty.tour-card-difficulty.hide-M
+                                                            .tour-card-difficulty__text.text-small Сложность
+                                                            ul.tour-card-difficulty__rating
+                                                                li 1
+                                                                li.is-current 2
+                                                                li 3
+                                                                li 4
+                                                        .tour-card__comfort.tour-card-comfort.hide-M
+                                                            .tour-card-comfort__text.text-small Комфорт
+                                                            .tour-card-comfort__level.text-small Базовый
+                                                .tour-card__col.tour-card__col--4
+                                                    .tour-card__price.title-3 324 600 ₸
+                                                    .tour-card__duration.tour-card-duration
+                                                        .tour-card-duration__wrapper
+                                                            svg.tour-card-duration__svg-icon
+                                                                use(href='assets/svg/sprite.svg#day')
+                                                            .tour-card-duration__text.text-small 7 дней
+                                                        .tour-card-duration__wrapper
+                                                            svg.tour-card-duration__svg-icon
+                                                                use(href='assets/svg/sprite.svg#night')
+                                                            .tour-card-duration__text.text-small 6 ночей
+                                                    .tour-card__dates.tour-card-dates
+                                                        h4.tour-card-dates__title.text-small Даты набора групп
+                                                        .tour-card-dates__text.text-common 20—31 марта 2023 г.
+                                                        button(type='button').tour-card-dates__button.text-small + 3 варианта
+                                                    a(href='#').tour-card__link-button.button-2.text-bold.hide-M Смотреть тур
+                                        
+                                    nav.tours-short__pagination.pagination
+                                        a(href='#').pagination__link-button.pagination__link-button--prev
+                                            svg
+                                                use(href='assets/svg/sprite.svg#angle1')
+                                        ul.pagination__list
+                                            li.pagination__item
+                                                a(href='#').pagination__link-wrapper.text-small.is-current 1
+                                            li.pagination__item
+                                                a(href='#').pagination__link-wrapper.text-small 2
+                                            li.pagination__item
+                                                a(href='#').pagination__link-wrapper.text-small 3
+                                            li.pagination__item
+                                                a(href='#').pagination__link-wrapper.text-small 4
+                                        a(href='#').pagination__link-button.pagination__link-button--next
+                                            svg
+                                                use(href='assets/svg/sprite.svg#angle1')
+                                
+                        
+            +footer('body__footer')

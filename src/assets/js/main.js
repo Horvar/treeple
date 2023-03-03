@@ -1,4 +1,5 @@
 import $ from 'jquery'
+require('jquery-ui/dist/jquery-ui')
 require('@fancyapps/fancybox')
 require('slick-slider/slick/slick')
 require('select2/dist/js/select2')
@@ -197,6 +198,29 @@ $(document).ready(function () {
         menuButton.toggleClass('is-active')
         menuFrame.slideToggle(500)
     }
+    
+    // range bar
+    $(function() {
+        const
+            rangeSlider = $('#priceRangeSlider'),
+            rangeOutputStart = $('#priceRangeStart'),
+            rangeOutputEnd = $('#priceRangeEnd'),
+            rangeMin = parseInt(rangeSlider.attr('data-min')),
+            rangeMax = parseInt(rangeSlider.attr('data-max'))
+        
+        rangeSlider.slider({
+            range: true,
+            min: rangeMin,
+            max: rangeMax,
+            values: [rangeMin, rangeMax - rangeMin],
+            slide: function(event, ui) {
+                rangeOutputStart.text(ui.values[0]),
+                rangeOutputEnd.text(ui.values[1])
+            }
+        })
+        rangeOutputStart.text(rangeSlider.slider('values', 0))
+        rangeOutputEnd.text(rangeSlider.slider('values', 1))
+    })
     
     // functions
     function fixWindowHeight() {

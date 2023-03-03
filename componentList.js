@@ -2,6 +2,7 @@ const path = require('path')
 
 const componentList = [
     'index',
+    'tour-list',
     'tour-detail'
 ]
 

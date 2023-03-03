@@ -13,6 +13,18 @@
     }
   }
   &--bg-2 {
+    background: url("assets/img/banner-2.jpg") top left / 100% auto fixed;
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+      background: url("assets/img/banner-2@2x.jpg") top left / cover no-repeat;
+    }
+  }
+  &--bg-3 {
     background: url("assets/img/banner-3.jpg") top left / 100% auto fixed;
 
     @media
@@ -101,7 +113,18 @@
       bottom: 20px;
     }
   }
-  &--3 {}
+  &--3 {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+
+    @media (max-width: $resM) {
+      bottom: 10px;
+    }
+  }
 }
 
 .intro__title {
@@ -116,14 +139,28 @@
   &--3 {}
 }
 
+.intro-search__sort-variations {
+  margin-bottom: 8px;
+  margin-right: auto;
+}
+
 //search
 
 .intro__search {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+  &--1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  &--2 {
+    margin-right: auto;
+    
+    @media (max-width: $resM) {
+      margin: 0;
+    }
+  }
 }
 
 .intro-search {
@@ -368,14 +405,18 @@
 
   position: relative;
 
+  border-radius: 0 8px 8px 0;
+
   @media (max-width: $resM) {
     width: 100%;
     height: 64px;
-    
+
     border-radius: 0 0 8px 8px;
   }
   
   &.is-active {
+    border-radius: 0 8px 0 0;
+    
     @media (max-width: $resM) {
       border-radius: 0 0 8px 0;
     }

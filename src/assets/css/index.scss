@@ -16,6 +16,8 @@
 @import '~select2/dist/css/select2.css';
 @import 'style/select2';
 @import '~js-datepicker/dist/datepicker.min.css';
+@import '~jquery-ui/dist/themes/base/jquery-ui.css';
+@import '~jquery-ui/dist/themes/base/theme.css';
 
 //styles
 @import 'style/body';
@@ -39,3 +41,7 @@
 @import 'style/tour-rules';
 @import 'style/associated';
 @import 'style/tour-info';
+@import 'style/pagination';
+@import 'style/filter';
+@import 'style/sort';
+@import 'style/sort-variations';

@@ -1,0 +1,49 @@
+.sort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sort__number {
+  display: flex;
+  gap: .25em;
+}
+
+//type
+
+.sort__type {}
+
+.sort-type {
+  display: flex;
+  align-items: center;
+  gap: .25em;
+}
+
+.sort-type__text {
+  color: $clrGray;
+}
+
+.sort-type__button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  
+  color: $clrViolet;
+  
+  &.is-inverse {
+    svg {
+      transform: rotate(-90deg);
+    }
+  }
+  
+  svg {
+    display: flex;
+    align-items: center;
+    
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+    
+    transform: rotate(90deg);
+  }
+}

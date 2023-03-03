@@ -3,18 +3,36 @@
 .main__row {
   display: flex;
   gap: $wGutterBase;
+
+  @media (max-width: $resM) {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 .main__col {
   &--1 {
-    width: $wColBase * 7 + $wGutterBase * 6;
+    flex: 1 1 auto;
 
     @media (max-width: $resM) {
+      flex: none;
       width: 100%;
     }
   }
   &--2 {
-    width: $wColBase * 3 + $wGutterBase * 2;
+    flex: 0 0 $wColBase * 3 + $wGutterBase * 2;
+
+    @media (max-width: $resM) {
+      flex: none;
+    }
+  }
+}
+
+.main__filter {
+  margin-top: 74px;
+
+  @media (max-width: $resM) {
+    margin-top: 0;
   }
 }
 
